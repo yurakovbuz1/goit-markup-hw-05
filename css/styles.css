@@ -525,10 +525,6 @@ address {
   display: inline-block;
 }
 
-.footer-subscribe {
-  display: inline-block;
-}
-
 .footer-logo-link {
   display: inline-block;
   margin-bottom: 16px;
@@ -583,8 +579,13 @@ address {
   background-color: #31D0AA;
 }
 
+.footer-subscribe {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+}
+
 .subscribe-title {
-  margin-bottom: 16px;
   color: #ffffff;
   font-family: Roboto;
   font-size: 16px;
@@ -593,24 +594,22 @@ address {
   letter-spacing: 0.02em;
 }
 
-.footer-subscribe-container {
-  display: flex;
-  gap: 24px;
-  
-}
-
-.email-input-container {
-  position: relative;
-}
-
 .email-input {
   width: 264px;
   height: 40px;
+  margin-top: 16px;
+  padding-left: 16px;
   border-radius: 4px;
   border: 1px solid  #ffffff;
+  color: #FFFFFF;
   background-color: transparent;
+  outline: transparent;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  z-index: 1;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: 1.5; 
+  letter-spacing: 0.04em;
 }
 
 .email-input:hover {
@@ -639,11 +638,12 @@ address {
 
 .subscribe-button {
   cursor: pointer;
-  display: inline-flex;
+  display: flex;
+  min-width: 165px;
+  height: 40px;
   padding: 8px 24px;
   justify-content: center;
   align-items: center;
-  gap: 16px;
   border: none;
   border-radius: 4px;
   background-color: #4D5AE5;
@@ -665,6 +665,11 @@ address {
   background-color: #404bbf;
 }
 
+.subscribe-button-icon {
+  fill: #FFFFFF;
+  margin-left: 16px;
+}
+
 .backdrop {
   position: fixed;
   width: 100%;
@@ -672,6 +677,7 @@ address {
   top: 0;
   left: 0;
   background-color: rgba(46, 47, 66, 0.40);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -684,27 +690,32 @@ address {
 }
 
 .modal {
-  position: relative;
+  position: absolute;
+  padding: 72px 24px 24px 24px;
+  width: 408px;
+  min-height: 584px; 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 408px;
-  /* height: 584px; */
-  padding: 24px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 4px;
   background: #FCFCFC;
 }
 
 .close-button {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 24px;
   right: 24px;
   width: 24px;
   height: 24px;
+  padding: 0;
   background-color: #E7E9FC;
   border: 1px solid rgba(0, 0, 0, 0.10);
   border-radius: 50%;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-button:hover {
@@ -713,11 +724,12 @@ address {
   border: none;
 }
 
+.close-button:focus {
+  background-color: #404BBF;
+  border: none;
+}
+
 .close-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
   fill: #000000;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -726,9 +738,13 @@ address {
   fill: #FFFFFF;
 }
 
+.close-button:focus .close-icon {
+  fill: #FFFFFF;
+}
+
 .modal-title {
-  margin-top: 48px;
   width: 360px;
+  margin-bottom: 16px;
   color: #2E2F42;
   text-align: center;
   font-family: Roboto;
@@ -745,7 +761,7 @@ address {
 }
 
 .inputs {
-  margin-top: 16px;
+  margin-bottom: 8px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -756,10 +772,12 @@ address {
 }
 
 .input-label {
+  display: block;
+  margin-bottom: 4px;
   color: #8E8F99;
   font-family: Roboto;
   font-size: 12px;
-  line-height: 1.2; 
+  line-height: 1.17; 
   letter-spacing: 0.04em;
 }
 
@@ -769,6 +787,9 @@ address {
   padding-left: 38px;
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.40);
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent;
   font-family: Roboto;
   font-size: 12px;
   line-height: 1.2; 
@@ -781,9 +802,11 @@ address {
 
 .input-icon {
   position: absolute;
-  top: 11px;
+  top: 50%;
   left: 16px;
+  transform: translateY(-50%);
   fill: #000000;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input:focus + .input-icon{
@@ -816,13 +839,13 @@ address {
 }
 
 .checkbox-container {
-  margin-top: 16px;
+  margin-top: 8px;
   display: flex;
   gap: 8px;
 }
 
-.modal-input-checkbox {
-  
+.modal-input-checkbox:hover {
+  cursor: pointer;
 }
 
 .checkbox-text {

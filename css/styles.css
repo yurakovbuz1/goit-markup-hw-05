@@ -823,7 +823,7 @@ address {
   padding: 8px 16px;
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.40);
-  /* color: rgba(46, 47, 66, 0.4); */
+  color: rgba(46, 47, 66, 0.4);
   background-color: transparent;
   outline: transparent;
   resize: none;
@@ -876,7 +876,8 @@ address {
   border-radius: 2px; 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
   border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  fill: transparent;
+  fill: transparent; /* Не розумію, чому checkbox постійно відображає іконку,
+                        хоч я і використовую fill */
 }
 
 .modal-input-checkbox + .checkbox-text .checkbox-icon-span {

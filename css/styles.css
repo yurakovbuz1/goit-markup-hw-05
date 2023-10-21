@@ -767,7 +767,7 @@ address {
   gap: 8px;
 }
 
-.input-form-container .comment {
+.textarea-form-container {
   margin-bottom: 16px;
 }
 
@@ -823,7 +823,7 @@ address {
   padding: 8px 16px;
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.40);
-  color: rgba(46, 47, 66, 0.4);
+  /* color: rgba(46, 47, 66, 0.4); */
   background-color: transparent;
   outline: transparent;
   resize: none;
@@ -858,8 +858,6 @@ address {
 }
 
 .checkbox-text {
-  display: flex;
-  justify-content: center;
   color: #8E8F99;
   font-family: Roboto;
   font-size: 12px;

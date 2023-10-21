@@ -767,6 +767,10 @@ address {
   gap: 8px;
 }
 
+.input-form-container .comment {
+  margin-bottom: 16px;
+}
+
 .input-container {
   position: relative;
 }

@@ -870,15 +870,13 @@ address {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
   border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: transparent; 
-  /* Не розумію, чому checkbox постійно відображає іконку,
-  хоч я і використовую fill */
 }
 
 .modal-input-checkbox + .checkbox-text .checkbox-icon-span {
   cursor: pointer;
 }
 
-.modal-input-checkbox:checked + .checkbox-text > .checkbox-icon-span{
+.modal-input-checkbox:checked + .checkbox-text .checkbox-icon-span{
   background-color: #404bbf;
   fill: #F4F4FD; 
   border: none;
